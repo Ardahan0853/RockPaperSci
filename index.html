@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice(){
+            let randomNumber = Math.floor(Math.random() * 3) 
+            let rockPaperSc = ['Rock', 'Paper', 'Scissors'];
+            return rockPaperSc[randomNumber]
+        }
+            let superiorNumber = 0
+            let superiorNumberComputer = 0
+        console.log(getComputerChoice())
+        function playGame(playerSelection, computerSelection){
+            let playerSelectionCase = playerSelection.toLowerCase();
+            let upperCase = playerSelectionCase.charAt(0).toUpperCase() + playerSelectionCase.slice(1);
+            console.log(upperCase)
+            
+            if(playerSelectionCase === "rock"){
+                superiorNumber = 1
+            }else if(playerSelectionCase === "paper"){
+                superiorNumber = 2
+            }else if(playerSelectionCase === "scissors"){
+                superiorNumber = 3
+        }
+            if(computerSelection === "Rock"){
+                superiorNumberComputer = 1
+            }else if(computerSelection === "Paper"){
+                superiorNumberComputer = 2
+            }else if(computerSelection === "Scissors"){
+                superiorNumberComputer = 3
+        }
+        console.log(superiorNumber)
+        console.log(superiorNumberComputer)
+        if(superiorNumber > superiorNumberComputer){
+            return("Player Wins!! " + upperCase + " Beats " + computerSelection )
+        }else if(superiorNumber < superiorNumberComputer){
+            return("Computer Wins!! " + computerSelection + " Beats " + upperCase)
+        }else{
+            return("No winners, DRAW!!")
+        }
+
+    }
+        console.log(playGame("PAPER", getComputerChoice()));
+        function game(number){
+            for(let i =0; i < number; i++){
+                let result = playGame('Rock', getComputerChoice())
+                superiorNumber += superiorNumber
+                superiorNumberComputer += superiorNumberComputer
+                if(superiorNumber > superiorNumberComputer){
+                return "Player wins the game" ,result
+                }else if(superiorNumberComputer > superiorNumber){
+                    return "Computer wins the game" ,result
+                }else{
+                    return "Its draw" ,result
+                }
+                
+            }
+            
+        }
+        console.log(game(5))
+        console.log(game(5))
+        console.log(game(5))
+        console.log(game(5))
+        console.log(game(5))
+        
+    </script>
+</body>
+</html>
